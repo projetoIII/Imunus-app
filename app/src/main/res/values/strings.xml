@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Imunus</string>
+    <string name="activity_login_toolbar_title">login</string>
+    <string name="activity_onboard_login_button">entrar</string>
+    <string name="activity_onboard_sign_up_button">cadastro</string>
+    <string name="activity_login_email_hint">email</string>
+    <string name="activity_login_password_hint">senha</string>
+    <string name="activity_login_forget_password">esqueci minha senha</string>
+
 </resources>

@@ -8,4 +8,11 @@
         <item name="boxBackgroundColor">@color/blue_title_20</item>
         <item name="boxStrokeColor">@color/blue_title</item>
     </style>
+
+    <style name="actionbar" parent="@style/Widget.MaterialComponents.Toolbar.Primary">
+        <item name="textAllCaps">true</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="titleCentered">true</item>
+        <item name="titleTextColor">@color/blue_title</item>
+    </style>
 </resources>
