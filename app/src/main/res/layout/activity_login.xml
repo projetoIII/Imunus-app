@@ -23,18 +23,18 @@
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/white"
                 app:navigationIcon="@drawable/ic_arrow_left"
-                app:title="@string/activity_login_toolbar_title"/>
+                app:title="@string/activity_login_toolbar_title" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/image_view_login_logo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_48"
-            android:importantForAccessibility="no"
             android:layout_marginTop="@dimen/margin_64"
             android:layout_marginEnd="@dimen/margin_48"
+            android:importantForAccessibility="no"
             android:src="@drawable/ic_butterfly"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,7 @@
             app:boxStrokeColor="@color/blue_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView">
+            app:layout_constraintTop_toBottomOf="@+id/image_view_login_logo">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_login_email"
@@ -82,7 +82,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/text_view_login_forget_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_8"
@@ -105,7 +105,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/text_view_login_forget_password" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
