@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1077111675202",
+    "project_id": "mundo-afd2b",
+    "storage_bucket": "mundo-afd2b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077111675202:android:a417932a937ff2a0c550db",
+        "android_client_info": {
+          "package_name": "com.example.imunus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1077111675202-ja076ukqjhnktlctfjftksq01jseej5q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4xhEtDKuJvtamXi3JWX_oY11-FRQ5adk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1077111675202-ja076ukqjhnktlctfjftksq01jseej5q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
