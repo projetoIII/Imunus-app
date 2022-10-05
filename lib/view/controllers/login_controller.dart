@@ -26,8 +26,11 @@ class LoginController {
   }
 
   Future<void> signOutWithGoogle(BuildContext context) async {
-    await _service
-        .signoutGoogle()
-        .then((_) => Navigation.backTo(context, Path.login));
+    var provider = Provider.of<PatientProvider>(context, listen: false);
+
+    await _service.signoutGoogle().then((_) {
+      Navigation.backTo(context, Path.login);
+      provider.clear();
+    });
   }
 }

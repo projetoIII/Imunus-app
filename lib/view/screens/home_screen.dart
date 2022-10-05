@@ -18,6 +18,11 @@ class _HomeScreenState extends State<HomeScreen> {
   PatientProvider? _provider;
 
   @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     _provider = Provider.of<PatientProvider>(context);
 
@@ -69,45 +74,45 @@ class _HomeScreenState extends State<HomeScreen> {
           HomeCard(
             imagePath: "assets/home/sammy-speech-bubble-dialog-cloud 1.png",
             title: "REGISTRE COMO SE SENTE!",
-            navigateTo: Path.home,
           ),
           HomeCard(
             imagePath: "assets/home/Group 111.png",
             title: "REGISTRE sintomas ",
-            navigateTo: Path.home,
           ),
           HomeCard(
             imagePath: "assets/home/sammy-pill (1) 2.png",
             title: "REGISTRE seus medicamentos",
-            navigateTo: Path.home,
           ),
           HomeCard(
             imagePath: "assets/home/sammy-note-with-button 1.png",
             title: "REGISTRE suas consultas",
-            navigateTo: Path.home,
           ),
           HomeCard(
             imagePath: "assets/home/Group 184.png",
             title: "consulte e tire dúvidas no faq",
-            navigateTo: Path.home,
           ),
           HomeCard(
             imagePath: "assets/home/sammy-speech-bubble-text 1.png",
             title: "comunidade DE APOIO",
-            navigateTo: Path.home,
           ),
           HomeCard(
             imagePath: "assets/home/sammy-board-with-graphs 1.png",
             title: "minha caminhada",
-            navigateTo: Path.home,
           ),
           HomeCard(
             imagePath: "assets/home/Group 113.png",
             title: "diário",
-            navigateTo: Path.home,
           ),
         ],
       );
 
-  _handleUsername() => Utils.getUserFirstName(_provider!.username!);
+  _handleUsername() {
+    var username = "";
+
+    if (_provider!.username != null) {
+      username = Utils.getUserFirstName(_provider!.username!);
+    }
+
+    return username;
+  }
 }

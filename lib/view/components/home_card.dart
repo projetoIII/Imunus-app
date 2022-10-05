@@ -7,12 +7,12 @@ class HomeCard extends StatelessWidget {
   final String imagePath;
   final String title;
   final Color? color;
-  final String navigateTo;
+  final String? navigateTo;
   const HomeCard({
     Key? key,
     required this.imagePath,
     required this.title,
-    required this.navigateTo,
+    this.navigateTo,
     this.color,
   }) : super(key: key);
 
@@ -24,7 +24,7 @@ class HomeCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(13.0),
       ),
       child: InkWell(
-        onTap: () => Navigation.to(context, navigateTo),
+        onTap: () => Navigation.to(context, navigateTo ?? Path.notImplemented),
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(

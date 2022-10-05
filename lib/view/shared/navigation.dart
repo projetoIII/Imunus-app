@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:imunus/view/screens/home_screen.dart';
 import 'package:imunus/view/screens/login_screen.dart';
+import 'package:imunus/view/screens/not_implemented_screen.dart';
 
 class Path {
   static const login = '/login';
   static const home = '/home';
+  static const notImplemented = '/not_implemented';
 }
 
 final routes = {
   Path.login: (context) => LoginScreen(),
-  Path.home: (context) => HomeScreen(),
+  Path.home: (context) => const HomeScreen(),
+  Path.notImplemented: (context) => const NotImplementedScreen(),
 };
 
 class Navigation {

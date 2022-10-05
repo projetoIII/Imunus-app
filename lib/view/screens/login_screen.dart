@@ -34,11 +34,12 @@ class LoginScreen extends StatelessWidget {
 
   Widget _form(BuildContext context, Size sizes) {
     return Positioned(
-      bottom: sizes.height * 0.5 - 50,
+      top: sizes.height * 0.37,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           _logo(),
+          const SizedBox(height: 32),
           _loginOptions(context),
         ],
       ),
