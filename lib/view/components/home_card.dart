@@ -19,7 +19,7 @@ class HomeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: AppColors.orange,
+      color: AppColors.primaryOrange,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(13.0),
       ),

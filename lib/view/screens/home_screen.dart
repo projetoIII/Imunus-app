@@ -32,14 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 20, top: 40),
-            child: Text("Menu".toUpperCase(),
-                style: const TextStyle(
-                    color: AppColors.blue,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600)),
-          ),
+          _title(),
           _cards(),
         ],
       )),
@@ -59,9 +52,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
               TextSpan(
                   text: "${_handleUsername()}!".toUpperCase(),
-                  style: const TextStyle(color: AppColors.orange)),
+                  style: const TextStyle(color: AppColors.primaryOrange)),
             ])),
       );
+
+  _title() => Padding(
+      padding: const EdgeInsets.only(left: 20, top: 40),
+      child: Text("Menu".toUpperCase(),
+          style: const TextStyle(
+              color: AppColors.blue,
+              fontSize: 18,
+              fontWeight: FontWeight.w600)));
 
   _cards() => GridView.count(
         shrinkWrap: true,
@@ -74,6 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
           HomeCard(
             imagePath: "assets/home/sammy-speech-bubble-dialog-cloud 1.png",
             title: "REGISTRE COMO SE SENTE!",
+            navigateTo: Path.emotions,
           ),
           HomeCard(
             imagePath: "assets/home/Group 111.png",

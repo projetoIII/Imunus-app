@@ -19,7 +19,6 @@ class PatientProvider extends ChangeNotifier {
   }
 
   clear({notify = true}) {
-    // TODO: chamar este método ao realizar logout.
     _username = null;
     _email = null;
     _photo = null;
