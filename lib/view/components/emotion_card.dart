@@ -42,7 +42,7 @@ class _EmotionCardState extends State<EmotionCard> {
     _isSelected = _emotionsProvider!.getEmotionState(widget.emotionType);
 
     return Opacity(
-      opacity: _isSelected == true ? 0.6 : 1,
+      opacity: _isSelected == true ? 0.3 : 1,
       child: Card(
         color: widget.color ?? AppColors.primaryOrange,
         shape: RoundedRectangleBorder(

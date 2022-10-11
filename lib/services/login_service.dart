@@ -58,6 +58,7 @@ class _GoogleSigninService {
       }
 
       var patient = Patient(
+        id: googleAccount.id,
         name: googleAccount.displayName!,
         email: googleAccount.email,
         photo: googleAccount.photoUrl,

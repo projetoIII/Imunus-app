@@ -2,15 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:imunus/domain/entities/patient.dart';
 
 class PatientProvider extends ChangeNotifier {
+  String? _id;
   String? _username;
   String? _email;
   String? _photo;
 
+  String? get id => _id;
   String? get username => _username;
   String? get email => _email;
   String? get photo => _photo;
 
   setPatient(Patient patient, {notify = true}) {
+    _id = patient.id;
     _username = patient.name;
     _email = patient.email;
     _photo = patient.photo;

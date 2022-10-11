@@ -1,7 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:imunus/infrastructure/locator.dart';
 import 'package:imunus/infrastructure/providers.dart';
-import 'package:imunus/view/screens/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:imunus/view/shared/navigation.dart';
 import 'package:provider/provider.dart';
@@ -12,9 +12,13 @@ void main() async {
 
   setupLocator();
 
-  await Firebase.initializeApp(
+  var firebaseApp = await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  // FirebaseApp secondaryApp = Firebase.app('SecondaryApp');
+
+  FirebaseFirestore firestore = FirebaseFirestore.instanceFor(app: firebaseApp);
 
   runApp(const MyApp());
 }

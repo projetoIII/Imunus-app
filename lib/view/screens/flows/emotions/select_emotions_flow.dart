@@ -18,7 +18,6 @@ class _SelectEmotionsFlowState extends State<SelectEmotionsFlow> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
@@ -36,6 +35,7 @@ class _SelectEmotionsFlowState extends State<SelectEmotionsFlow> {
         _title(),
         _cards(),
         _saveButton(),
+        if (_emotionsProvider!.hasSelectedEmotion == true) _cleanSelection(),
       ],
     );
   }
@@ -162,4 +162,24 @@ class _SelectEmotionsFlowState extends State<SelectEmotionsFlow> {
           ),
         ),
       ));
+
+  _cleanSelection() => Padding(
+        padding: const EdgeInsets.only(top: 8.0, bottom: 24),
+        child: TextButton(
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(Colors.grey.shade300),
+            ),
+            onPressed: () => _emotionsProvider!.cleanState(notify: true),
+            child: SizedBox(
+              width: 200,
+              height: 28,
+              child: Center(
+                child: Text(
+                  "Limpar".toUpperCase(),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.grey.shade700, fontSize: 18),
+                ),
+              ),
+            )),
+      );
 }

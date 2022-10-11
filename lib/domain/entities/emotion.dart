@@ -9,7 +9,6 @@ part 'emotion.g.dart';
 class Emotion with _$Emotion {
   const factory Emotion({
     int? id,
-    required dynamic userId,
     required EmotionType emotion,
     DateTime? reportedAt,
     DateTime? deletedAt,

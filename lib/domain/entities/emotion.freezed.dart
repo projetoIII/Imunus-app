@@ -21,7 +21,6 @@ Emotion _$EmotionFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Emotion {
   int? get id => throw _privateConstructorUsedError;
-  dynamic get userId => throw _privateConstructorUsedError;
   EmotionType get emotion => throw _privateConstructorUsedError;
   DateTime? get reportedAt => throw _privateConstructorUsedError;
   DateTime? get deletedAt => throw _privateConstructorUsedError;
@@ -38,7 +37,6 @@ abstract class $EmotionCopyWith<$Res> {
       _$EmotionCopyWithImpl<$Res>;
   $Res call(
       {int? id,
-      dynamic userId,
       EmotionType emotion,
       DateTime? reportedAt,
       DateTime? deletedAt,
@@ -56,7 +54,6 @@ class _$EmotionCopyWithImpl<$Res> implements $EmotionCopyWith<$Res> {
   @override
   $Res call({
     Object? id = freezed,
-    Object? userId = freezed,
     Object? emotion = freezed,
     Object? reportedAt = freezed,
     Object? deletedAt = freezed,
@@ -67,10 +64,6 @@ class _$EmotionCopyWithImpl<$Res> implements $EmotionCopyWith<$Res> {
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      userId: userId == freezed
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as dynamic,
       emotion: emotion == freezed
           ? _value.emotion
           : emotion // ignore: cast_nullable_to_non_nullable
@@ -99,7 +92,6 @@ abstract class _$$_EmotionCopyWith<$Res> implements $EmotionCopyWith<$Res> {
   @override
   $Res call(
       {int? id,
-      dynamic userId,
       EmotionType emotion,
       DateTime? reportedAt,
       DateTime? deletedAt,
@@ -118,7 +110,6 @@ class __$$_EmotionCopyWithImpl<$Res> extends _$EmotionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? userId = freezed,
     Object? emotion = freezed,
     Object? reportedAt = freezed,
     Object? deletedAt = freezed,
@@ -129,10 +120,6 @@ class __$$_EmotionCopyWithImpl<$Res> extends _$EmotionCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      userId: userId == freezed
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as dynamic,
       emotion: emotion == freezed
           ? _value.emotion
           : emotion // ignore: cast_nullable_to_non_nullable
@@ -158,7 +145,6 @@ class __$$_EmotionCopyWithImpl<$Res> extends _$EmotionCopyWithImpl<$Res>
 class _$_Emotion with DiagnosticableTreeMixin implements _Emotion {
   const _$_Emotion(
       {this.id,
-      required this.userId,
       required this.emotion,
       this.reportedAt,
       this.deletedAt,
@@ -170,8 +156,6 @@ class _$_Emotion with DiagnosticableTreeMixin implements _Emotion {
   @override
   final int? id;
   @override
-  final dynamic userId;
-  @override
   final EmotionType emotion;
   @override
   final DateTime? reportedAt;
@@ -182,7 +166,7 @@ class _$_Emotion with DiagnosticableTreeMixin implements _Emotion {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Emotion(id: $id, userId: $userId, emotion: $emotion, reportedAt: $reportedAt, deletedAt: $deletedAt, comment: $comment)';
+    return 'Emotion(id: $id, emotion: $emotion, reportedAt: $reportedAt, deletedAt: $deletedAt, comment: $comment)';
   }
 
   @override
@@ -191,7 +175,6 @@ class _$_Emotion with DiagnosticableTreeMixin implements _Emotion {
     properties
       ..add(DiagnosticsProperty('type', 'Emotion'))
       ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('userId', userId))
       ..add(DiagnosticsProperty('emotion', emotion))
       ..add(DiagnosticsProperty('reportedAt', reportedAt))
       ..add(DiagnosticsProperty('deletedAt', deletedAt))
@@ -204,7 +187,6 @@ class _$_Emotion with DiagnosticableTreeMixin implements _Emotion {
         (other.runtimeType == runtimeType &&
             other is _$_Emotion &&
             const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.userId, userId) &&
             const DeepCollectionEquality().equals(other.emotion, emotion) &&
             const DeepCollectionEquality()
                 .equals(other.reportedAt, reportedAt) &&
@@ -217,7 +199,6 @@ class _$_Emotion with DiagnosticableTreeMixin implements _Emotion {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(userId),
       const DeepCollectionEquality().hash(emotion),
       const DeepCollectionEquality().hash(reportedAt),
       const DeepCollectionEquality().hash(deletedAt),
@@ -237,7 +218,6 @@ class _$_Emotion with DiagnosticableTreeMixin implements _Emotion {
 abstract class _Emotion implements Emotion {
   const factory _Emotion(
       {final int? id,
-      required final dynamic userId,
       required final EmotionType emotion,
       final DateTime? reportedAt,
       final DateTime? deletedAt,
@@ -247,8 +227,6 @@ abstract class _Emotion implements Emotion {
 
   @override
   int? get id;
-  @override
-  dynamic get userId;
   @override
   EmotionType get emotion;
   @override

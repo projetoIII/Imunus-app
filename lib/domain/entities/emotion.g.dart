@@ -8,7 +8,6 @@ part of 'emotion.dart';
 
 _$_Emotion _$$_EmotionFromJson(Map<String, dynamic> json) => _$_Emotion(
       id: json['id'] as int?,
-      userId: json['userId'],
       emotion: $enumDecode(_$EmotionTypeEnumMap, json['emotion']),
       reportedAt: json['reportedAt'] == null
           ? null
@@ -22,7 +21,6 @@ _$_Emotion _$$_EmotionFromJson(Map<String, dynamic> json) => _$_Emotion(
 Map<String, dynamic> _$$_EmotionToJson(_$_Emotion instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'userId': instance.userId,
       'emotion': _$EmotionTypeEnumMap[instance.emotion]!,
       'reportedAt': instance.reportedAt?.toIso8601String(),
       'deletedAt': instance.deletedAt?.toIso8601String(),
@@ -36,7 +34,7 @@ const _$EmotionTypeEnumMap = {
   EmotionType.sensible: 'sensible',
   EmotionType.distracted: 'distracted',
   EmotionType.focused: 'focused',
-  EmotionType.relaxed: 'peaceful',
+  EmotionType.relaxed: 'relaxed',
   EmotionType.active: 'active',
   EmotionType.down: 'down',
   EmotionType.sociable: 'sociable',

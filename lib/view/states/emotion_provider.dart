@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:imunus/core/enums/emotion_type.dart';
+import 'package:imunus/domain/entities/emotion.dart';
 import 'package:imunus/view/screens/flows/emotion_flows.dart';
 
 class EmotionsProvider extends ChangeNotifier {
   EmotionFlow? _flow;
 
+  String? _comment;
+
+  final List<Emotion> _emotions = [];
+
   bool? hasSelectedEmotion;
+  bool dataHasBeenSent = false;
+
   // Emotion controllers
   bool? _happy,
       _sad,
@@ -21,6 +28,10 @@ class EmotionsProvider extends ChangeNotifier {
       _nervous;
 
   EmotionFlow get flow => _flow ?? EmotionFlow.selectEmotions;
+
+  List<Emotion> get emotions => _emotions;
+
+  String? get comment => _comment;
 
   setEmotionFlow(EmotionFlow newFlow) {
     _flow = newFlow;
@@ -104,14 +115,26 @@ class EmotionsProvider extends ChangeNotifier {
       hasSelectedEmotion = true;
     }
 
+    // _emotions.add(Emotion(userId: userId, emotion: value, reportedAt: DateTime.now()));
+
     notifyListeners();
   }
 
-  void cleanState() {
+  void setComment(String value, {notify = true}) {
+    _comment = value;
+    if (notify) notifyListeners();
+  }
+
+  void cleanState({notify = false}) {
     if (hasSelectedEmotion == true) {
       for (var item in EmotionType.values) {
-        setEmotion(item, notify: false);
+        setEmotion(item, notify: notify, value: false);
       }
+
+      hasSelectedEmotion = false;
+      emotions.clear();
+      _comment = null;
+      dataHasBeenSent = true;
     }
   }
 }
