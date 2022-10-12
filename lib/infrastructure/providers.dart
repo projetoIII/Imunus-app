@@ -1,3 +1,4 @@
+import 'package:imunus/view/states/date_filter_provider.dart';
 import 'package:imunus/view/states/emotion_provider.dart';
 import 'package:imunus/view/states/patient_provider.dart';
 import 'package:provider/provider.dart';
@@ -14,6 +15,11 @@ class Providers {
     // Patient Provider
     providers.add(ChangeNotifierProvider<EmotionsProvider>(
       create: (_) => EmotionsProvider(),
+    ));
+
+    // Date Filter Provider
+    providers.add(ChangeNotifierProvider<DateFilterProvider>(
+      create: (_) => DateFilterProvider(),
     ));
 
     return providers;

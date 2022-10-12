@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:imunus/domain/entities/emotion.dart';
 import 'package:imunus/domain/entities/emotion_report.dart';
 import 'package:imunus/services/interfaces/iemotions_service.dart';
+import 'package:imunus/view/shared/utils.dart';
 
 class EmotionService implements IEmotionsService {
   final _repo = FirebaseFirestore.instance
@@ -26,9 +27,15 @@ class EmotionService implements IEmotionsService {
   }
 
   @override
-  Future<List<EmotionReport>> list(DateTime dateTime) {
-    // TODO: implement list
-    throw UnimplementedError();
+  Future<List<EmotionReport>> list(DateTime dateTime) async {
+    var result = await _repo.get().then((value) => value.docs);
+
+    var data = result.map((e) => e.data()).where((element) =>
+        element.deletedAt == null &&
+        element.updatedAt != null &&
+        Utils.dateIsInRange(element.updatedAt!, dateTime));
+
+    return data.toList();
   }
 
   @override

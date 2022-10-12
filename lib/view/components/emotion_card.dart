@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:imunus/core/enums/emotion_type.dart';
 import 'package:imunus/view/shared/colors.dart';
 import 'package:imunus/view/states/emotion_provider.dart';
+import 'package:imunus/view/states/patient_provider.dart';
 import 'package:provider/provider.dart';
 
 class EmotionCard extends StatefulWidget {
@@ -38,7 +39,8 @@ class _EmotionCardState extends State<EmotionCard> {
 
   @override
   Widget build(BuildContext context) {
-    _emotionsProvider = Provider.of<EmotionsProvider>(context);
+    _emotionsProvider ??= Provider.of<EmotionsProvider>(context);
+
     _isSelected = _emotionsProvider!.getEmotionState(widget.emotionType);
 
     return Opacity(

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:imunus/infrastructure/locator.dart';
+import 'package:imunus/view/controllers/emotions_controller.dart';
 import 'package:imunus/view/screens/flows/emotion_flows.dart';
 import 'package:imunus/view/shared/colors.dart';
 import 'package:imunus/view/states/emotion_provider.dart';
@@ -12,8 +14,17 @@ class SaveCommentFlow extends StatefulWidget {
 }
 
 class _SaveCommentFlowState extends State<SaveCommentFlow> {
+  late bool _sendReport;
+
   EmotionsProvider? _emotionsProvider;
   final _commentController = TextEditingController();
+  final _controller = locator<EmotionsController>();
+
+  @override
+  void initState() {
+    super.initState();
+    _sendReport = false;
+  }
 
   @override
   void dispose() {
@@ -60,26 +71,36 @@ class _SaveCommentFlowState extends State<SaveCommentFlow> {
 
   _saveButton() => Padding(
         padding: const EdgeInsets.symmetric(vertical: 24.0),
-        child: TextButton(
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(AppColors.blue500),
-            ),
-            onPressed: _emotionsProvider!.hasSelectedEmotion != true
-                ? null
-                : () {
-                    _emotionsProvider!.setComment(_commentController.text);
-                    _emotionsProvider!.setEmotionFlow(EmotionFlow.listEmotions);
-                  },
-            child: SizedBox(
-              width: 200,
-              height: 28,
-              child: Center(
-                child: Text(
-                  "Salvar".toUpperCase(),
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(color: Colors.white, fontSize: 18),
+        child: _sendReport
+            ? const Center(child: CircularProgressIndicator())
+            : TextButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(AppColors.blue500),
                 ),
-              ),
-            )),
+                onPressed: _emotionsProvider!.hasSelectedEmotion != true
+                    ? null
+                    : () async {
+                        _emotionsProvider!.setComment(_commentController.text);
+
+                        setState(() {
+                          _sendReport = true;
+                        });
+
+                        await _controller.postReport(context);
+
+                        _emotionsProvider!
+                            .setEmotionFlow(EmotionFlow.listEmotions);
+                      },
+                child: SizedBox(
+                  width: 200,
+                  height: 28,
+                  child: Center(
+                    child: Text(
+                      "Salvar".toUpperCase(),
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(color: Colors.white, fontSize: 18),
+                    ),
+                  ),
+                )),
       );
 }

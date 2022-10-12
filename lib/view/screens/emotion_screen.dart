@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:imunus/core/enums/emotion_type.dart';
-import 'package:imunus/view/components/datetime_picker.dart';
+import 'package:imunus/view/components/date_filter.dart';
 import 'package:imunus/view/components/emotion_card.dart';
 import 'package:imunus/view/screens/flows/emotion_flows.dart';
 import 'package:imunus/view/screens/flows/emotions/emotion_report_flow.dart';
@@ -33,7 +33,7 @@ class _EmotionScreenState extends State<EmotionScreen> {
 
   @override
   Widget build(BuildContext context) {
-    _emotionsProvider = Provider.of<EmotionsProvider>(context);
+    _emotionsProvider ??= Provider.of<EmotionsProvider>(context);
 
     return Scaffold(
       appBar: _appBar(),
@@ -61,7 +61,12 @@ class _EmotionScreenState extends State<EmotionScreen> {
             }
           },
         ),
-        actions: const [DateTimePicker()],
+        actions: [
+          DateFilter(
+            callback: () =>
+                _emotionsProvider!.setEmotionFlow(EmotionFlow.listEmotions),
+          )
+        ],
       );
 
   _body() {

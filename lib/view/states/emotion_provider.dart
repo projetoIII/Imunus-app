@@ -115,7 +115,7 @@ class EmotionsProvider extends ChangeNotifier {
       hasSelectedEmotion = true;
     }
 
-    // _emotions.add(Emotion(userId: userId, emotion: value, reportedAt: DateTime.now()));
+    _emotions.add(Emotion(emotion: emotion, reportedAt: DateTime.now()));
 
     notifyListeners();
   }

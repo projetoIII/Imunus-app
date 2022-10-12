@@ -28,7 +28,7 @@ _$_EmotionReport _$$_EmotionReportFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$_EmotionReportToJson(_$_EmotionReport instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'emotions': instance.emotions,
+      'emotions': instance.emotions.map((e) => e.toJson()).toList(),
       'userId': instance.userId,
       'comment': instance.comment,
       'createAt': instance.createAt?.toIso8601String(),

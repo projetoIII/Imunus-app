@@ -3,6 +3,7 @@ import 'package:imunus/domain/entities/emotion.dart';
 import 'package:imunus/domain/entities/emotion_report.dart';
 import 'package:imunus/infrastructure/locator.dart';
 import 'package:imunus/services/emotion_service.dart';
+import 'package:imunus/view/states/date_filter_provider.dart';
 import 'package:imunus/view/states/emotion_provider.dart';
 import 'package:imunus/view/states/patient_provider.dart';
 import 'package:provider/provider.dart';
@@ -11,15 +12,30 @@ class EmotionsController {
   final EmotionService _service = locator<EmotionService>();
   EmotionsProvider? _provider;
   PatientProvider? _patientProvider;
+  DateFilterProvider? _dateFilterProvider;
 
   EmotionsProvider _getProvider(BuildContext context) {
-    _provider ??= Provider.of<EmotionsProvider>(context);
+    _provider ??= Provider.of<EmotionsProvider>(context, listen: false);
     return _provider!;
   }
 
   PatientProvider _getPatientProvider(BuildContext context) {
-    _patientProvider ??= Provider.of<PatientProvider>(context);
+    _patientProvider ??= Provider.of<PatientProvider>(context, listen: false);
     return _patientProvider!;
+  }
+
+  DateFilterProvider _getDateProvider(BuildContext context) {
+    _dateFilterProvider ??=
+        Provider.of<DateFilterProvider>(context, listen: false);
+    return _dateFilterProvider!;
+  }
+
+  Future<List<EmotionReport>> list(BuildContext context) async {
+    var dateFilterProvider = _getDateProvider(context);
+
+    var response = await _service.list(dateFilterProvider.selectedDate);
+
+    return response;
   }
 
   Future<EmotionReport> postReport(BuildContext context) async {
