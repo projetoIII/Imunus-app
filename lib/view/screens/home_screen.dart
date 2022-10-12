@@ -80,6 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
           HomeCard(
             imagePath: "assets/home/Group 111.png",
             title: "REGISTRE sintomas ",
+            navigateTo: Path.symptoms,
           ),
           HomeCard(
             imagePath: "assets/home/sammy-pill (1) 2.png",

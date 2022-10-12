@@ -102,6 +102,15 @@ flutter:
     - assets/feelings/faces/icons8-sad-100 1.png
     - assets/feelings/faces/icons8-thinking-64 1.png
 
+    # Symptoms assets
+    - assets/symptoms/Group 31.png
+    - assets/symptoms/icons/icons8-confused-100 1.png
+    - assets/symptoms/icons/icons8-eyelashes-3d-90 1.png
+    - assets/symptoms/icons/icons8-plus-100 1.png
+    - assets/symptoms/icons/icons8-shaking-100 1.png
+    - assets/symptoms/icons/icons8-voice-100 1.png
+    - assets/symptoms/icons/icons8-watch-your-step-100 1.png
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

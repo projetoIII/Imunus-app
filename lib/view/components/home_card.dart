@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:imunus/view/shared/colors.dart';
 import 'package:imunus/view/shared/navigation.dart';
 
