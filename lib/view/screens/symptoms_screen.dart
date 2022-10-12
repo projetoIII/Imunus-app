@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:imunus/view/components/date_filter.dart';
+import 'package:imunus/view/screens/flows/symptoms/comment_flow.dart';
 import 'package:imunus/view/screens/flows/symptoms/select_symptom_flow.dart';
 import 'package:imunus/view/screens/flows/symptoms_flow.dart';
 import 'package:imunus/view/shared/colors.dart';
@@ -19,7 +20,6 @@ class _SymptomsScreenState extends State<SymptomsScreen> {
 
   @override
   void dispose() {
-    _provider!.clear(notify: false);
     super.dispose();
   }
 
@@ -43,8 +43,12 @@ class _SymptomsScreenState extends State<SymptomsScreen> {
           onPressed: () {
             switch (_provider!.flow) {
               case SymptomsFlow.selectSymptom:
-              default:
                 Navigation.back(context);
+                _provider!.clear(notify: false);
+                break;
+              case SymptomsFlow.comment:
+              default:
+                _provider!.setFlow(SymptomsFlow.selectSymptom);
                 break;
             }
           },
@@ -60,8 +64,9 @@ class _SymptomsScreenState extends State<SymptomsScreen> {
     switch (_provider!.flow) {
       case SymptomsFlow.selectSymptom:
         return const SelectSymptomFlow();
-      case SymptomsFlow.newSymptom:
       case SymptomsFlow.comment:
+        return const CommentSymptomFlow();
+      case SymptomsFlow.newSymptom:
       case SymptomsFlow.listSymptoms:
       default:
         return Container();

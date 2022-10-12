@@ -1,18 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'emotion_report.dart';
+part of 'symptom.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_EmotionReport _$$_EmotionReportFromJson(Map<String, dynamic> json) =>
-    _$_EmotionReport(
+_$_Symptom _$$_SymptomFromJson(Map<String, dynamic> json) => _$_Symptom(
       id: json['id'] as int?,
-      emotions: (json['emotions'] as List<dynamic>)
-          .map((e) => Emotion.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      symptomType: $enumDecode(_$SymptomTypeEnumMap, json['symptomType']),
       userId: json['userId'],
+      rating: json['rating'] as num,
+      reportedAt: DateTime.parse(json['reportedAt'] as String),
       comment: json['comment'] as String?,
       createAt: json['createAt'] == null
           ? null
@@ -25,13 +24,24 @@ _$_EmotionReport _$$_EmotionReportFromJson(Map<String, dynamic> json) =>
           : DateTime.parse(json['deletedAt'] as String),
     );
 
-Map<String, dynamic> _$$_EmotionReportToJson(_$_EmotionReport instance) =>
+Map<String, dynamic> _$$_SymptomToJson(_$_Symptom instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'emotions': instance.emotions,
+      'symptomType': _$SymptomTypeEnumMap[instance.symptomType]!,
       'userId': instance.userId,
+      'rating': instance.rating,
+      'reportedAt': instance.reportedAt.toIso8601String(),
       'comment': instance.comment,
       'createAt': instance.createAt?.toIso8601String(),
       'updatedAt': instance.updatedAt?.toIso8601String(),
       'deletedAt': instance.deletedAt?.toIso8601String(),
     };
+
+const _$SymptomTypeEnumMap = {
+  SymptomType.visionProblem: 'visionProblem',
+  SymptomType.muscleWeakness: 'muscleWeakness',
+  SymptomType.confusion: 'confusion',
+  SymptomType.speakProblem: 'speakProblem',
+  SymptomType.muscleTremor: 'muscleTremor',
+  SymptomType.other: 'other',
+};

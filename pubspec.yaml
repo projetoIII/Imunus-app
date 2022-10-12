@@ -43,6 +43,7 @@ dependencies:
   freezed_annotation: ^2.1.0
   json_annotation: ^4.6.0
   cloud_firestore: ^3.5.1
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:
@@ -104,6 +105,7 @@ flutter:
 
     # Symptoms assets
     - assets/symptoms/Group 31.png
+    - assets/symptoms/icons8-watch-your-step-100 (1) 1.png
     - assets/symptoms/icons/icons8-confused-100 1.png
     - assets/symptoms/icons/icons8-eyelashes-3d-90 1.png
     - assets/symptoms/icons/icons8-plus-100 1.png

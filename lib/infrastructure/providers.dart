@@ -1,6 +1,7 @@
 import 'package:imunus/view/states/date_filter_provider.dart';
 import 'package:imunus/view/states/emotion_provider.dart';
 import 'package:imunus/view/states/patient_provider.dart';
+import 'package:imunus/view/states/rating_provider.dart';
 import 'package:imunus/view/states/symptoms_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -26,6 +27,11 @@ class Providers {
     // Symptoms Provider
     providers.add(ChangeNotifierProvider<SymptomsProvider>(
       create: (_) => SymptomsProvider(),
+    ));
+
+    // Rating Provider
+    providers.add(ChangeNotifierProvider<RatingProvider>(
+      create: (_) => RatingProvider(),
     ));
 
     return providers;
