@@ -38,6 +38,14 @@ class SymptomController {
     return _ratingProvider!;
   }
 
+  Future<List<Symptom>> list(BuildContext context) async {
+    var dateFilterProvider = _getDateProvider(context);
+
+    var response = await _service.list(dateFilterProvider.selectedDate);
+
+    return response;
+  }
+
   Future<Symptom> post(BuildContext context) async {
     var symptomProvider = _getSymptomProvider(context);
     var patientProvider = _getPatientProvider(context);
@@ -53,7 +61,7 @@ class SymptomController {
     );
 
     var response = await _service.post(symptomBody);
-    symptomProvider.clear(notify: false);
+    symptomProvider.clear(notify: false, backToSelectFlow: false);
 
     return response;
   }

@@ -32,7 +32,7 @@ class Utils {
   }
 
   static String formatDate(DateTime date) =>
-      "${date.day}/${date.month}/${date.year}";
+      "${date.day.toString().padLeft(2, '0')}/${date.month.toString().padLeft(2, '0')}/${date.year}";
 
   static _Assets getSymptomAssets(SymptomType symptom) {
     switch (symptom) {

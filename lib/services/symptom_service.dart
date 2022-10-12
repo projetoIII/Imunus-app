@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:imunus/domain/entities/symptom.dart';
 import 'package:imunus/services/interfaces/isymptom_service.dart';
+import 'package:imunus/view/shared/utils.dart';
 
 class SymptomService implements ISymptomService {
   final _repo =
@@ -22,9 +23,14 @@ class SymptomService implements ISymptomService {
   }
 
   @override
-  Future<List<Symptom>> list(DateTime dateTime) {
-    // TODO: implement list
-    throw UnimplementedError();
+  Future<List<Symptom>> list(DateTime dateTime) async {
+    var result = await _repo.get().then((value) => value.docs);
+
+    var data = result.map((e) => e.data()).where((element) =>
+        element.deletedAt == null &&
+        Utils.dateIsInRange(element.reportedAt, dateTime));
+
+    return data.toList();
   }
 
   @override

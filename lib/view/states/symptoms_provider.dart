@@ -38,7 +38,7 @@ class SymptomsProvider extends ChangeNotifier {
     if (notify) notifyListeners();
   }
 
-  void clear({notify = true}) {
+  void clear({notify = true, backToSelectFlow = true}) {
     _comment = null;
     _symptomType = null;
     hasSelectedSymptom = false;

@@ -7,8 +7,10 @@ import 'package:provider/provider.dart';
 
 class SymptomCard extends StatefulWidget {
   final SymptomType symptom;
+  final bool? disableClick;
 
-  const SymptomCard({Key? key, required this.symptom}) : super(key: key);
+  const SymptomCard({Key? key, required this.symptom, this.disableClick})
+      : super(key: key);
 
   @override
   State<SymptomCard> createState() => _SymptomCardState();
@@ -17,6 +19,7 @@ class SymptomCard extends StatefulWidget {
 class _SymptomCardState extends State<SymptomCard> {
   late String imagePath, title;
   late SymptomType symptomType;
+  late bool disableClick;
 
   SymptomsProvider? _provider;
 
@@ -28,6 +31,7 @@ class _SymptomCardState extends State<SymptomCard> {
     var assets = Utils.getSymptomAssets(symptomType);
     imagePath = assets.iconPath;
     title = assets.title;
+    disableClick = widget.disableClick ?? false;
   }
 
   @override
@@ -40,9 +44,11 @@ class _SymptomCardState extends State<SymptomCard> {
           : AppColors.helperOrange,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13.0)),
       child: InkWell(
-        onTap: () {
-          _provider!.setSymptom(symptomType);
-        },
+        onTap: disableClick
+            ? null
+            : () {
+                _provider!.setSymptom(symptomType);
+              },
         child: Padding(
           padding: const EdgeInsets.all(6.0),
           child: Column(

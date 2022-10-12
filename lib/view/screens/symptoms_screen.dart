@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:imunus/view/components/date_filter.dart';
 import 'package:imunus/view/screens/flows/symptoms/comment_flow.dart';
+import 'package:imunus/view/screens/flows/symptoms/list_syntoms_flow.dart';
 import 'package:imunus/view/screens/flows/symptoms/select_symptom_flow.dart';
 import 'package:imunus/view/screens/flows/symptoms_flow.dart';
 import 'package:imunus/view/shared/colors.dart';
@@ -66,8 +67,9 @@ class _SymptomsScreenState extends State<SymptomsScreen> {
         return const SelectSymptomFlow();
       case SymptomsFlow.comment:
         return const CommentSymptomFlow();
-      case SymptomsFlow.newSymptom:
       case SymptomsFlow.listSymptoms:
+        return const ListSymptomFlow();
+      case SymptomsFlow.newSymptom:
       default:
         return Container();
     }
