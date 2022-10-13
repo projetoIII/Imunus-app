@@ -1,16 +1,35 @@
 # imunus
 
-A new Flutter project.
+Aplicativo voltado para pacientes portadores de Esclerose Múltipla.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Funcionalidades:
 
-A few resources to get you started if this is your first Flutter project:
+Atualmente o app encontra-se funcional para dispositivos Android, com as seguintes features:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+* Registro de sentimentos
+* Registro de sintomas
+* Relatório mensal de sintomas e sentimentos
+* Login com Google
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Tecnologias
+* Flutter: v2.10.2 (detalhes sobre as bibliotecas podem ser encontradas no arquivo pubspack.yaml)
+* Colab Google (utilizamos para poder fazer a análise de sentimentos): https://colab.research.google.com/drive/1lvgNEDesSKrsxRBK9C_24C-WZdALL8HV#scrollTo=sIKqh-QDAZJc
+
+_OBS._: Após rodar o Colab e aguardar alguns segundos, na última célula será gerado um link público para o acesso do endpoint que usamos para classificar o texto.
+
+Você deve pegar este link e colocar no arquivo `lib/services/ml_service.dart`, no atributo `_baseUrl`.
+
+
+## Executando o projeto...
+
+Para executar o projeto, conecte um emulador ou o seu dispositivo Android e execute os comandos:
+
+```
+flutter clean
+flutter pub get
+flutter run
+```
+
+Ou então você rodar pelo seu AndroidStudio ou VSCode(recomendado).
