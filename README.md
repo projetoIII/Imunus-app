@@ -12,6 +12,8 @@ Atualmente o app encontra-se funcional para dispositivos Android, com as seguint
 * Relatório mensal de sintomas e sentimentos
 * Login com Google
 
+#### Branch mais estável: `develop`
+
 
 ## Tecnologias
 * Flutter: v2.10.2 (detalhes sobre as bibliotecas podem ser encontradas no arquivo pubspack.yaml)
