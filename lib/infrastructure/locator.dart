@@ -4,6 +4,7 @@ import 'package:imunus/services/login_service.dart';
 import 'package:imunus/services/symptom_service.dart';
 import 'package:imunus/view/controllers/emotions_controller.dart';
 import 'package:imunus/view/controllers/login_controller.dart';
+import 'package:imunus/view/controllers/report_controller.dart';
 import 'package:imunus/view/controllers/symptom_controller.dart';
 
 final locator = GetIt.instance;
@@ -18,4 +19,5 @@ setupLocator() {
   locator.registerLazySingleton(() => LoginController());
   locator.registerLazySingleton(() => EmotionsController());
   locator.registerLazySingleton(() => SymptomController());
+  locator.registerLazySingleton(() => ReportController());
 }

@@ -101,6 +101,7 @@ class _HomeScreenState extends State<HomeScreen> {
           HomeCard(
             imagePath: "assets/home/sammy-board-with-graphs 1.png",
             title: "minha caminhada",
+            navigateTo: Path.report,
           ),
           HomeCard(
             imagePath: "assets/home/Group 113.png",

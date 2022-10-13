@@ -1,3 +1,4 @@
+import 'package:imunus/domain/entities/report.dart';
 import 'package:imunus/domain/entities/symptom.dart';
 
 abstract class ISymptomService {
@@ -5,4 +6,5 @@ abstract class ISymptomService {
   Future<Symptom> getById(dynamic id);
   Future<Symptom> post(Symptom emotion);
   Future<dynamic> delete(Symptom emotion);
+  Future<List<Report>> report(DateTime dateTime);
 }

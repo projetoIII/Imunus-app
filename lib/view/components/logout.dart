@@ -33,7 +33,7 @@ class Logout extends StatelessWidget {
               borderRadius: BorderRadius.circular(7.0),
             ),
             child: Padding(
-                padding: EdgeInsets.all(24),
+                padding: const EdgeInsets.all(24),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [

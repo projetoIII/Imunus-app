@@ -25,6 +25,24 @@ class Utils {
     return [start, end];
   }
 
+  static List<DateTime> getMonthRange(DateTime dateTime) {
+    var lastDay = Utils.getMonthLastDay(dateTime);
+
+    var start = DateTime(dateTime.year, dateTime.month, 1);
+    var end = DateTime(dateTime.year, dateTime.month, lastDay, 23, 59, 59);
+
+    return [start, end];
+  }
+
+  static int getMonthLastDay(DateTime dateTime) =>
+      DateTime(dateTime.year, dateTime.month, 0).day;
+
+  static bool isSameMonth(DateTime value, DateTime selectedDay) {
+    var range = Utils.getMonthRange(value);
+
+    return value.isAfter(range[0]) && value.isBefore(range[1]);
+  }
+
   static bool dateIsInRange(DateTime value, DateTime selectedDay) {
     var range = Utils.getDateTimeInformedDayRange(selectedDay);
 
@@ -120,6 +138,36 @@ class Utils {
         return _Assets(
             title: "Nervoso",
             iconPath: "assets/feelings/faces/icons8-sad-58 1.png");
+    }
+  }
+
+  static String getMonthLabel(int month) {
+    if (month == 1) {
+      return "JAN";
+    } else if (month == 2) {
+      return "FEV";
+    } else if (month == 3) {
+      return "MAR";
+    } else if (month == 4) {
+      return "ABR";
+    } else if (month == 5) {
+      return "MAI";
+    } else if (month == 6) {
+      return "JUN";
+    } else if (month == 7) {
+      return "JUL";
+    } else if (month == 8) {
+      return "AGO";
+    } else if (month == 9) {
+      return "SET";
+    } else if (month == 10) {
+      return "OUT";
+    } else if (month == 11) {
+      return "NOV";
+    } else if (month == 12) {
+      return "DEZ";
+    } else {
+      return "";
     }
   }
 }

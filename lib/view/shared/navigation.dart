@@ -3,6 +3,7 @@ import 'package:imunus/view/screens/emotion_screen.dart';
 import 'package:imunus/view/screens/home_screen.dart';
 import 'package:imunus/view/screens/login_screen.dart';
 import 'package:imunus/view/screens/not_implemented_screen.dart';
+import 'package:imunus/view/screens/report_screen.dart';
 import 'package:imunus/view/screens/symptoms_screen.dart';
 
 class Path {
@@ -11,6 +12,7 @@ class Path {
   static const notImplemented = '/not_implemented';
   static const emotions = '/emotions';
   static const symptoms = '/symptoms';
+  static const report = '/report';
 }
 
 final routes = {
@@ -19,6 +21,7 @@ final routes = {
   Path.notImplemented: (context) => const NotImplementedScreen(),
   Path.emotions: (context) => const EmotionScreen(),
   Path.symptoms: (context) => const SymptomsScreen(),
+  Path.report: (context) => const ReportScreen(),
 };
 
 class Navigation {
