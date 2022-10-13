@@ -12,6 +12,7 @@ class EmotionReport with _$EmotionReport {
     required List<Emotion> emotions,
     required dynamic userId,
     String? comment,
+    String? commentAnalysis,
     DateTime? createAt,
     DateTime? updatedAt,
     DateTime? deletedAt,

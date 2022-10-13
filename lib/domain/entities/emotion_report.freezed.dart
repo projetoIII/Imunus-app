@@ -24,6 +24,7 @@ mixin _$EmotionReport {
   List<Emotion> get emotions => throw _privateConstructorUsedError;
   dynamic get userId => throw _privateConstructorUsedError;
   String? get comment => throw _privateConstructorUsedError;
+  String? get commentAnalysis => throw _privateConstructorUsedError;
   DateTime? get createAt => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
   DateTime? get deletedAt => throw _privateConstructorUsedError;
@@ -44,6 +45,7 @@ abstract class $EmotionReportCopyWith<$Res> {
       List<Emotion> emotions,
       dynamic userId,
       String? comment,
+      String? commentAnalysis,
       DateTime? createAt,
       DateTime? updatedAt,
       DateTime? deletedAt});
@@ -64,6 +66,7 @@ class _$EmotionReportCopyWithImpl<$Res>
     Object? emotions = freezed,
     Object? userId = freezed,
     Object? comment = freezed,
+    Object? commentAnalysis = freezed,
     Object? createAt = freezed,
     Object? updatedAt = freezed,
     Object? deletedAt = freezed,
@@ -84,6 +87,10 @@ class _$EmotionReportCopyWithImpl<$Res>
       comment: comment == freezed
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
+              as String?,
+      commentAnalysis: commentAnalysis == freezed
+          ? _value.commentAnalysis
+          : commentAnalysis // ignore: cast_nullable_to_non_nullable
               as String?,
       createAt: createAt == freezed
           ? _value.createAt
@@ -113,6 +120,7 @@ abstract class _$$_EmotionReportCopyWith<$Res>
       List<Emotion> emotions,
       dynamic userId,
       String? comment,
+      String? commentAnalysis,
       DateTime? createAt,
       DateTime? updatedAt,
       DateTime? deletedAt});
@@ -135,6 +143,7 @@ class __$$_EmotionReportCopyWithImpl<$Res>
     Object? emotions = freezed,
     Object? userId = freezed,
     Object? comment = freezed,
+    Object? commentAnalysis = freezed,
     Object? createAt = freezed,
     Object? updatedAt = freezed,
     Object? deletedAt = freezed,
@@ -155,6 +164,10 @@ class __$$_EmotionReportCopyWithImpl<$Res>
       comment: comment == freezed
           ? _value.comment
           : comment // ignore: cast_nullable_to_non_nullable
+              as String?,
+      commentAnalysis: commentAnalysis == freezed
+          ? _value.commentAnalysis
+          : commentAnalysis // ignore: cast_nullable_to_non_nullable
               as String?,
       createAt: createAt == freezed
           ? _value.createAt
@@ -180,6 +193,7 @@ class _$_EmotionReport with DiagnosticableTreeMixin implements _EmotionReport {
       required final List<Emotion> emotions,
       required this.userId,
       this.comment,
+      this.commentAnalysis,
       this.createAt,
       this.updatedAt,
       this.deletedAt})
@@ -202,6 +216,8 @@ class _$_EmotionReport with DiagnosticableTreeMixin implements _EmotionReport {
   @override
   final String? comment;
   @override
+  final String? commentAnalysis;
+  @override
   final DateTime? createAt;
   @override
   final DateTime? updatedAt;
@@ -210,7 +226,7 @@ class _$_EmotionReport with DiagnosticableTreeMixin implements _EmotionReport {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'EmotionReport(id: $id, emotions: $emotions, userId: $userId, comment: $comment, createAt: $createAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
+    return 'EmotionReport(id: $id, emotions: $emotions, userId: $userId, comment: $comment, commentAnalysis: $commentAnalysis, createAt: $createAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
   }
 
   @override
@@ -222,6 +238,7 @@ class _$_EmotionReport with DiagnosticableTreeMixin implements _EmotionReport {
       ..add(DiagnosticsProperty('emotions', emotions))
       ..add(DiagnosticsProperty('userId', userId))
       ..add(DiagnosticsProperty('comment', comment))
+      ..add(DiagnosticsProperty('commentAnalysis', commentAnalysis))
       ..add(DiagnosticsProperty('createAt', createAt))
       ..add(DiagnosticsProperty('updatedAt', updatedAt))
       ..add(DiagnosticsProperty('deletedAt', deletedAt));
@@ -236,6 +253,8 @@ class _$_EmotionReport with DiagnosticableTreeMixin implements _EmotionReport {
             const DeepCollectionEquality().equals(other._emotions, _emotions) &&
             const DeepCollectionEquality().equals(other.userId, userId) &&
             const DeepCollectionEquality().equals(other.comment, comment) &&
+            const DeepCollectionEquality()
+                .equals(other.commentAnalysis, commentAnalysis) &&
             const DeepCollectionEquality().equals(other.createAt, createAt) &&
             const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
             const DeepCollectionEquality().equals(other.deletedAt, deletedAt));
@@ -249,6 +268,7 @@ class _$_EmotionReport with DiagnosticableTreeMixin implements _EmotionReport {
       const DeepCollectionEquality().hash(_emotions),
       const DeepCollectionEquality().hash(userId),
       const DeepCollectionEquality().hash(comment),
+      const DeepCollectionEquality().hash(commentAnalysis),
       const DeepCollectionEquality().hash(createAt),
       const DeepCollectionEquality().hash(updatedAt),
       const DeepCollectionEquality().hash(deletedAt));
@@ -270,6 +290,7 @@ abstract class _EmotionReport implements EmotionReport {
       required final List<Emotion> emotions,
       required final dynamic userId,
       final String? comment,
+      final String? commentAnalysis,
       final DateTime? createAt,
       final DateTime? updatedAt,
       final DateTime? deletedAt}) = _$_EmotionReport;
@@ -285,6 +306,8 @@ abstract class _EmotionReport implements EmotionReport {
   dynamic get userId;
   @override
   String? get comment;
+  @override
+  String? get commentAnalysis;
   @override
   DateTime? get createAt;
   @override

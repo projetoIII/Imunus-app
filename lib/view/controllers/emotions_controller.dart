@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:imunus/domain/entities/emotion.dart';
 import 'package:imunus/domain/entities/emotion_report.dart';
@@ -46,27 +48,45 @@ class EmotionsController {
     var provider = _getProvider(context);
     var patientProvider = _getPatientProvider(context);
 
-    var report = _createReportBody(
-        patientProvider.id!, provider.emotions, provider.comment);
-
-    var response = await _service.post(report);
-    var analysis;
+    String? analysis;
 
     if (provider.comment != null) {
-      analysis = await _analysisService.getAnalysis(provider.comment!);
+      analysis = await _getSentimentalAnalysis(provider.comment!);
     }
+
+    var report = _createReportBody(
+        patientProvider.id!, provider.emotions, provider.comment, analysis);
+
+    var response = await _service.post(report);
 
     provider.cleanState();
 
     return response;
   }
 
-  EmotionReport _createReportBody(
-          String userId, List<Emotion> emotions, String? comment) =>
+  Future<String> _getSentimentalAnalysis(String comment) async {
+    var result = await _analysisService.getAnalysis(comment);
+
+    String? sentimental;
+    num maxValue = 0.0;
+
+    for (var item in result.entries) {
+      if (item.value > maxValue) {
+        sentimental = item.key;
+        maxValue = item.value;
+      }
+    }
+
+    return sentimental!;
+  }
+
+  EmotionReport _createReportBody(String userId, List<Emotion> emotions,
+          String? comment, String? commentAnalysis) =>
       EmotionReport(
         userId: userId,
         emotions: emotions,
         comment: comment,
+        commentAnalysis: commentAnalysis,
         createAt: DateTime.now(),
         updatedAt: DateTime.now(),
       );

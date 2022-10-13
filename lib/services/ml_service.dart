@@ -16,7 +16,7 @@ class SentimentalAnalysisService {
     return headers;
   }
 
-  Future<dynamic> getAnalysis(String comment) async {
+  Future<Map<String, dynamic>> getAnalysis(String comment) async {
     var uri = Uri.http(_baseUrl, '/');
     var headers = await getHeaders();
 
@@ -25,6 +25,6 @@ class SentimentalAnalysisService {
     var response =
         await _client.post(uri, headers: headers, body: jsonEncode(body));
 
-    return response;
+    return jsonDecode(response.body);
   }
 }
