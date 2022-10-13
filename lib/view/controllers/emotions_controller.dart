@@ -3,6 +3,7 @@ import 'package:imunus/domain/entities/emotion.dart';
 import 'package:imunus/domain/entities/emotion_report.dart';
 import 'package:imunus/infrastructure/locator.dart';
 import 'package:imunus/services/emotion_service.dart';
+import 'package:imunus/services/ml_service.dart';
 import 'package:imunus/view/states/date_filter_provider.dart';
 import 'package:imunus/view/states/emotion_provider.dart';
 import 'package:imunus/view/states/patient_provider.dart';
@@ -10,6 +11,9 @@ import 'package:provider/provider.dart';
 
 class EmotionsController {
   final EmotionService _service = locator<EmotionService>();
+  final SentimentalAnalysisService _analysisService =
+      locator<SentimentalAnalysisService>();
+
   EmotionsProvider? _provider;
   PatientProvider? _patientProvider;
   DateFilterProvider? _dateFilterProvider;
@@ -46,6 +50,12 @@ class EmotionsController {
         patientProvider.id!, provider.emotions, provider.comment);
 
     var response = await _service.post(report);
+    var analysis;
+
+    if (provider.comment != null) {
+      analysis = await _analysisService.getAnalysis(provider.comment!);
+    }
+
     provider.cleanState();
 
     return response;

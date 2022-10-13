@@ -9,12 +9,14 @@ class EmotionCard extends StatefulWidget {
   final String title;
   final Color? color;
   final EmotionType emotionType;
+  final bool? disableClick;
 
   const EmotionCard(
       {Key? key,
       required this.iconPath,
       required this.title,
       required this.emotionType,
+      this.disableClick,
       this.color})
       : super(key: key);
 
@@ -26,9 +28,12 @@ class _EmotionCardState extends State<EmotionCard> {
   EmotionsProvider? _emotionsProvider;
   bool? _isSelected;
 
+  late bool disableClick;
+
   @override
   void initState() {
     super.initState();
+    disableClick = widget.disableClick ?? false;
   }
 
   @override
@@ -50,7 +55,7 @@ class _EmotionCardState extends State<EmotionCard> {
           borderRadius: BorderRadius.circular(13.0),
         ),
         child: InkWell(
-          onTap: () => _isSelected == true ? null : _onTap(),
+          onTap: () => _isSelected == true || disableClick ? null : _onTap(),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

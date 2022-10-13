@@ -101,6 +101,7 @@ class _EmotionReportFlowState extends State<EmotionReportFlow> {
             iconPath: values.iconPath,
             emotionType: e.emotion,
             color: AppColors.primaryOrange,
+            disableClick: true,
           );
         }).toList(),
       );

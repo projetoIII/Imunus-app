@@ -40,7 +40,13 @@ class _MonthReportFlowState extends State<MonthReportFlow> {
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [_month(), _symptoms(), SizedBox(height: 48), _emotions()],
+      children: [
+        _month(),
+        _symptoms(),
+        const SizedBox(height: 30),
+        _emotions(),
+        const SizedBox(height: 70),
+      ],
     );
   }
 
@@ -139,34 +145,37 @@ class _MonthReportFlowState extends State<MonthReportFlow> {
         return const Center(child: CircularProgressIndicator());
       });
 
-  _title({isSymptom = true}) => Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          RichText(
-            textAlign: TextAlign.left,
-            text: TextSpan(
-                text: "COM BASE EM SEUS ",
-                children: [
-                  TextSpan(
-                      text: isSymptom ? "SINTOMAS" : "SENTIMENTOS",
-                      style: TextStyle(
-                          color: isSymptom
-                              ? AppColors.primaryOrange
-                              : AppColors.green))
-                ],
-                style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                    color: Colors.black)),
-          ),
-          const SizedBox(height: 5),
-          Text(
-            "Seus ${isSymptom ? "sintomas" : "sentimentos"} mais frequentes esse mês foram:"
-                .toUpperCase(),
-            style: const TextStyle(
-                color: AppColors.gray, fontWeight: FontWeight.bold),
-          )
-        ],
+  _title({isSymptom = true}) => Padding(
+        padding: const EdgeInsets.symmetric(vertical: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            RichText(
+              textAlign: TextAlign.left,
+              text: TextSpan(
+                  text: "COM BASE EM SEUS ",
+                  children: [
+                    TextSpan(
+                        text: isSymptom ? "SINTOMAS" : "SENTIMENTOS",
+                        style: TextStyle(
+                            color: isSymptom
+                                ? AppColors.primaryOrange
+                                : AppColors.green))
+                  ],
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      color: Colors.black)),
+            ),
+            const SizedBox(height: 5),
+            Text(
+              "Seus ${isSymptom ? "sintomas" : "sentimentos"} mais frequentes esse mês foram:"
+                  .toUpperCase(),
+              style: const TextStyle(
+                  color: AppColors.gray, fontWeight: FontWeight.bold),
+            )
+          ],
+        ),
       );
 
   Widget _card(Report report, {isSymptom = true}) {
@@ -175,7 +184,7 @@ class _MonthReportFlowState extends State<MonthReportFlow> {
         : Utils.getEmotionAssets(report.emotion!);
 
     return Card(
-      color: isSymptom ? AppColors.primaryOrange : AppColors.green,
+      color: isSymptom ? AppColors.helperOrange : AppColors.green,
       child: Container(
         width: MediaQuery.of(context).size.width,
         constraints: const BoxConstraints(minHeight: 150),
@@ -203,7 +212,7 @@ class _MonthReportFlowState extends State<MonthReportFlow> {
                     const SizedBox(height: 6),
                     const Text("DIAS",
                         style: TextStyle(fontWeight: FontWeight.bold)),
-                    Text(report.days.join(", "),
+                    Text(report.days.toSet().toList().join(", "),
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.grey.shade100)),
