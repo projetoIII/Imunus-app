@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:imunus/domain/entities/report.dart';
+import 'package:imunus/domain/entities/report/report.dart';
 import 'package:imunus/infrastructure/locator.dart';
 import 'package:imunus/services/emotion_service.dart';
 import 'package:imunus/services/symptom_service.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:imunus/core/enums/emotion_type.dart';
-import 'package:imunus/domain/entities/emotion.dart';
+import 'package:imunus/domain/entities/emotion/emotion.dart';
 import 'package:imunus/view/screens/flows/emotion_flows.dart';
 
 class EmotionsProvider extends ChangeNotifier {

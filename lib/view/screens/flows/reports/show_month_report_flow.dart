@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:imunus/core/enums/emotion_type.dart';
 import 'package:imunus/core/enums/symptom_type.dart';
-import 'package:imunus/domain/entities/report.dart';
+import 'package:imunus/domain/entities/report/report.dart';
 import 'package:imunus/infrastructure/locator.dart';
 import 'package:imunus/view/controllers/report_controller.dart';
 import 'package:imunus/view/shared/colors.dart';

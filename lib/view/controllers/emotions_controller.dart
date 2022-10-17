@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:imunus/domain/entities/emotion.dart';
-import 'package:imunus/domain/entities/emotion_report.dart';
+import 'package:imunus/domain/entities/emotion/emotion.dart';
+import 'package:imunus/domain/entities/emotion_report/emotion_report.dart';
 import 'package:imunus/infrastructure/locator.dart';
 import 'package:imunus/services/emotion_service.dart';
 import 'package:imunus/services/ml_service.dart';

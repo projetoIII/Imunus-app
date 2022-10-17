@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:imunus/core/enums/emotion_type.dart';
-import 'package:imunus/domain/entities/emotion.dart';
-import 'package:imunus/domain/entities/emotion_report.dart';
-import 'package:imunus/domain/entities/report.dart';
+import 'package:imunus/domain/entities/emotion/emotion.dart';
+import 'package:imunus/domain/entities/emotion_report/emotion_report.dart';
+import 'package:imunus/domain/entities/report/report.dart';
 import 'package:imunus/services/interfaces/iemotions_service.dart';
 import 'package:imunus/view/shared/utils.dart';
 

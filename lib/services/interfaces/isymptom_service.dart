@@ -1,4 +1,4 @@
-import 'package:imunus/domain/entities/report.dart';
+import 'package:imunus/domain/entities/report/report.dart';
 import 'package:imunus/domain/entities/symptom.dart';
 
 abstract class ISymptomService {

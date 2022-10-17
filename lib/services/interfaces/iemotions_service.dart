@@ -1,6 +1,6 @@
-import 'package:imunus/domain/entities/emotion.dart';
-import 'package:imunus/domain/entities/emotion_report.dart';
-import 'package:imunus/domain/entities/report.dart';
+import 'package:imunus/domain/entities/emotion/emotion.dart';
+import 'package:imunus/domain/entities/emotion_report/emotion_report.dart';
+import 'package:imunus/domain/entities/report/report.dart';
 
 abstract class IEmotionsService {
   Future<List<EmotionReport>> list(DateTime dateTime);

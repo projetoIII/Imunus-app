@@ -1,4 +1,4 @@
-import 'package:imunus/domain/entities/patient.dart';
+import 'package:imunus/domain/entities/patient/patient.dart';
 
 abstract class ILoginService {
   Future<Patient?> signinWithGoogle();

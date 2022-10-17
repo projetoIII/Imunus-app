@@ -1,4 +1,4 @@
-import 'package:imunus/domain/entities/emotion.dart';
+import 'package:imunus/domain/entities/emotion/emotion.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 
