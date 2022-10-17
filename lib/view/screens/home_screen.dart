@@ -74,38 +74,38 @@ class _HomeScreenState extends State<HomeScreen> {
         children: const [
           HomeCard(
             imagePath: "assets/home/sammy-speech-bubble-dialog-cloud 1.png",
-            title: "REGISTRE COMO SE SENTE!",
+            title: "Meus sentimentos",
             navigateTo: Path.emotions,
           ),
           HomeCard(
             imagePath: "assets/home/Group 111.png",
-            title: "REGISTRE sintomas ",
+            title: "Meus sintomas ",
             navigateTo: Path.symptoms,
           ),
           HomeCard(
             imagePath: "assets/home/sammy-pill (1) 2.png",
-            title: "REGISTRE seus medicamentos",
+            title: "Meus medicamentos",
           ),
           HomeCard(
             imagePath: "assets/home/sammy-note-with-button 1.png",
-            title: "REGISTRE suas consultas",
-          ),
-          HomeCard(
-            imagePath: "assets/home/Group 184.png",
-            title: "consulte e tire dúvidas no faq",
+            title: "Minhas consultas",
           ),
           HomeCard(
             imagePath: "assets/home/sammy-speech-bubble-text 1.png",
-            title: "comunidade DE APOIO",
+            title: "Fórum de dúvidas",
+          ),
+          HomeCard(
+            imagePath: "assets/home/Group 184.png",
+            title: "Informações",
           ),
           HomeCard(
             imagePath: "assets/home/sammy-board-with-graphs 1.png",
-            title: "minha caminhada",
+            title: "Relatórios",
             navigateTo: Path.report,
           ),
           HomeCard(
             imagePath: "assets/home/Group 113.png",
-            title: "diário",
+            title: "Meu diário",
           ),
         ],
       );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:imunus/domain/entities/symptom.dart';
+import 'package:imunus/domain/entities/symptom/symptom.dart';
 import 'package:imunus/infrastructure/locator.dart';
 import 'package:imunus/view/components/symptom_card.dart';
 import 'package:imunus/view/controllers/symptom_controller.dart';

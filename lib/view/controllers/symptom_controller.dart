@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:imunus/core/enums/symptom_type.dart';
-import 'package:imunus/domain/entities/symptom.dart';
+import 'package:imunus/domain/entities/symptom/symptom.dart';
 import 'package:imunus/infrastructure/locator.dart';
 import 'package:imunus/services/symptom_service.dart';
 import 'package:imunus/view/states/date_filter_provider.dart';

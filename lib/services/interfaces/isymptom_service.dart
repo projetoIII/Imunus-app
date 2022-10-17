@@ -1,5 +1,5 @@
 import 'package:imunus/domain/entities/report/report.dart';
-import 'package:imunus/domain/entities/symptom.dart';
+import 'package:imunus/domain/entities/symptom/symptom.dart';
 
 abstract class ISymptomService {
   Future<List<Symptom>> list(DateTime dateTime);

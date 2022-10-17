@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:imunus/core/shared/strings.dart';
-import 'package:imunus/domain/entities/patient.dart';
+import 'package:imunus/domain/entities/patient/patient.dart';
 import 'package:imunus/domain/exceptions/login_exception.dart';
 import 'package:imunus/services/interfaces/ilogin_service.dart';
 import 'package:imunus/view/shared/utils.dart';

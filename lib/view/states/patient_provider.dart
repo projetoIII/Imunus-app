@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:imunus/domain/entities/patient.dart';
+import 'package:imunus/domain/entities/patient/patient.dart';
 
 class PatientProvider extends ChangeNotifier {
   String? _id;

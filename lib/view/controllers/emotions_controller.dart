@@ -13,8 +13,8 @@ import 'package:provider/provider.dart';
 
 class EmotionsController {
   final EmotionService _service = locator<EmotionService>();
-  final SentimentalAnalysisService _analysisService =
-      locator<SentimentalAnalysisService>();
+  // final SentimentalAnalysisService _analysisService =
+  //     locator<SentimentalAnalysisService>();
 
   EmotionsProvider? _provider;
   PatientProvider? _patientProvider;
@@ -50,9 +50,9 @@ class EmotionsController {
 
     String? analysis;
 
-    if (provider.comment != null) {
-      analysis = await _getSentimentalAnalysis(provider.comment!);
-    }
+    // if (provider.comment != null) {
+    //   analysis = await _getSentimentalAnalysis(provider.comment!);
+    // }
 
     var report = _createReportBody(
         patientProvider.id!, provider.emotions, provider.comment, analysis);
@@ -64,21 +64,21 @@ class EmotionsController {
     return response;
   }
 
-  Future<String> _getSentimentalAnalysis(String comment) async {
-    var result = await _analysisService.getAnalysis(comment);
+  // Future<String> _getSentimentalAnalysis(String comment) async {
+  //   var result = await _analysisService.getAnalysis(comment);
 
-    String? sentimental;
-    num maxValue = 0.0;
+  //   String? sentimental;
+  //   num maxValue = 0.0;
 
-    for (var item in result.entries) {
-      if (item.value > maxValue) {
-        sentimental = item.key;
-        maxValue = item.value;
-      }
-    }
+  //   for (var item in result.entries) {
+  //     if (item.value > maxValue) {
+  //       sentimental = item.key;
+  //       maxValue = item.value;
+  //     }
+  //   }
 
-    return sentimental!;
-  }
+  //   return sentimental!;
+  // }
 
   EmotionReport _createReportBody(String userId, List<Emotion> emotions,
           String? comment, String? commentAnalysis) =>

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:imunus/domain/entities/patient.dart';
+import 'package:imunus/domain/entities/patient/patient.dart';
 import 'package:imunus/infrastructure/locator.dart';
 import 'package:imunus/services/login_service.dart';
 import 'package:imunus/view/shared/navigation.dart';

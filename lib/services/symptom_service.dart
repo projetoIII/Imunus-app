@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:imunus/core/enums/symptom_type.dart';
 import 'package:imunus/domain/entities/report/report.dart';
-import 'package:imunus/domain/entities/symptom.dart';
+import 'package:imunus/domain/entities/symptom/symptom.dart';
 import 'package:imunus/services/interfaces/isymptom_service.dart';
 import 'package:imunus/view/shared/utils.dart';
 

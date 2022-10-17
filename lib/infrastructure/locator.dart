@@ -15,7 +15,7 @@ setupLocator() {
   locator.registerLazySingleton(() => LoginService());
   locator.registerLazySingleton(() => EmotionService());
   locator.registerLazySingleton(() => SymptomService());
-  locator.registerLazySingleton(() => SentimentalAnalysisService());
+  // locator.registerLazySingleton(() => SentimentalAnalysisService());
 
   // Controllers
   locator.registerLazySingleton(() => LoginController());
